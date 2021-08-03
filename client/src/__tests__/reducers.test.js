@@ -8,7 +8,7 @@ import {
 const initialState = {
     products: [],
     categories: [{ name: 'Food' }],
-    cuurentCategory: '1',
+    currentCategory: '1',
 };
 
 
@@ -38,5 +38,5 @@ test('UPDATE_CURRENT_CATEGORY', () => {
     });
   
     expect(newState.currentCategory).toBe('2');
-    expect(initialState.currentCategory).toBe(undefined);
+    expect(initialState.currentCategory).toBe('1');
 });
