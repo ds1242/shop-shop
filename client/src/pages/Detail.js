@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 
 import Cart from '../components/Cart';
 // import { useStoreContext } from '../utils/GlobalState';
-import { Provider } from 'react-redux';
-import store from '../../utils/store';
+import { useSelector, useDispatch } from 'react-redux';
+// import store from '../utils/store';
 
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY, ADD_TO_CART, UPDATE_PRODUCTS } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
@@ -14,6 +14,8 @@ import spinner from '../assets/spinner.gif';
 
 function Detail() {
   // const [state, dispatch] = useStoreContext();
+  const state = useSelector(state => state);
+  const dispatch = useDispatch();
   const { id }= useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});

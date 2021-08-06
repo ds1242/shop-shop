@@ -19,10 +19,14 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 import OrderHistory from './pages/OrderHistory';
 import Success from './pages/Success';
+// import reducer from './utils/reducers';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
+
+
+
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
